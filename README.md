@@ -15,7 +15,7 @@ without any corporation-specific identification such as `inc.` or `llc.`
 
 `{model}` is the *base model* of a particular class of models that a manufacturer makes.
 Variants such as caliber types, barrel lengths, fire modes, etc. go inside the `json` files
-that describe them via their `{model number}`.
+that describe them via their `{model number}` (e.g. the manufacturer's SKU).
 
 ## Contributing
 

@@ -26,13 +26,15 @@ def gun_db():
 
 @gun_db.command()
 def makes():
-    click.echo("\n".join([h2e(p.name) for p in BASE_PATH.iterdir() if p.is_dir()]))
+    makes = sorted(h2e(p.name) for p in BASE_PATH.iterdir() if p.is_dir())
+    click.echo("\n".join(makes))
 
 
 @gun_db.command()
 @click.argument('make')
 def models(make):
-    click.echo("\n".join([h2e(p.name) for p in (BASE_PATH / e2h(make)).iterdir() if p.is_dir()]))
+    models = sorted(h2e(p.name) for p in (BASE_PATH / e2h(make)).iterdir() if p.is_dir())
+    click.echo("\n".join(models))
 
 
 @gun_db.command()
@@ -40,7 +42,8 @@ def models(make):
 @click.argument('model')
 def variants(make, model):
     model_path = (BASE_PATH / e2h(make) / model)
-    click.echo("\n".join([p.name.replace('.json', '') for p in model_path.iterdir() if p.is_file()]))
+    variants = sorted(p.name.replace('.json', '') for p in model_path.iterdir() if p.is_file())
+    click.echo("\n".join(variants))
 
 
 @gun_db.command()

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 GunClear Gun DB CLI
 """
